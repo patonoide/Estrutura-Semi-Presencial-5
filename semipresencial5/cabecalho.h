@@ -34,6 +34,8 @@ struct filav {
 };
 typedef struct filav FilaV;
 
+
+void filadImprime(FilaD* f);
 FilaD * filadCria();
 void filadInsere(FilaD* f, float v);
 float filadRetira(FilaD * f);

@@ -5,6 +5,9 @@
  */
 
 
+
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "cabecalho.h"
@@ -47,13 +50,25 @@ float filadRetira(FilaD * f) {
 
 void filadLibera(FilaD * f) {
     Lista * q = f-> ini;
-    while (q != = NULL) {
+    while (q !=  NULL) {
         Lista * t = q -> prox;
         free(q);
         q = t;
 
     }
     free(f);
+}
+
+void filadImprime(FilaD* f){
+    Lista * q = f;
+    while (f!=NULL)
+    {
+        printf("%.2f",f->ini->info);
+        f=f->ini->prox;
+        
+    }
+    
+    
 }
 
 FilaV * filavCria() {
@@ -90,8 +105,8 @@ float filavRetira(FilaV * f) {
 }
 
 void filavImprime(FilaV * f) {
-    int i;
-    for (i = 0; i < f->n; i++) {
+    float i;
+    for (i = 0.0; i < f->n; i++) {
         printf("%f", f->vet[f->ini + i] % 10);
     }
 }

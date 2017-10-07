@@ -59,14 +59,14 @@ int main(int argc, char** argv) {
             {
                 printf("\nEscolha de qual fila o elemento sera excluido: \n1-Fila Vector\n2-Fila com lista tipo D\n Opcao(Rei Hey  Apple): ");
                 scanf("%i", &escolhedor);
-               
+
                 if (escolhedor == 1) {
-                    elemento =filavRetira(v);
-                    printf("\nO elemento e:%.2f",elemento);
+                    elemento = filavRetira(v);
+                    printf("\nO elemento e:%.2f", elemento);
                 } else
                     if (escolhedor == 2) {
-                    elemento =filadRetira(d);
-                    printf("\nO elemento e:%.2f",elemento);
+                    elemento = filadRetira(d);
+                    printf("\nO elemento e:%.2f", elemento);
                 } else {
                     printf("\n Opcao ou elemento errados.");
                 }
@@ -75,11 +75,24 @@ int main(int argc, char** argv) {
             }
             case 4:
             {
-
+                
                 break;
             }
             case 5:
             {
+                printf("\nEscolha de qual fila o elemento sera mostrado: \n1-Fila Vector\n2-Fila com lista tipo D\n Opcao(Rei Hey  Apple): ");
+                scanf("%i", &escolhedor);
+
+                if (escolhedor == 1) {
+                    filavImprime(v);
+
+                } else
+                    if (escolhedor == 2) {
+                        filadImprime(d);
+
+                } else {
+                    printf("\n Opcao errada.");
+                }
 
                 break;
             }
@@ -87,20 +100,20 @@ int main(int argc, char** argv) {
             {
                 printf("\nEscolha qual fila sera libertada: \n1-Fila Vector\n2-Fila com lista tipo D\n Opcao(Rei Hey  Apple): ");
                 scanf("%i", &escolhedor);
-               
+
                 if (escolhedor == 1) {
-                    elemento =filavRetira(v);
-                    
+                    elemento = filavRetira(v);
+
                 } else
                     if (escolhedor == 2) {
-                        filadLibera(d);
-                    
+                    filadLibera(d);
+
                 } else {
                     printf("\n Opcao errada.");
                 }
                 break;
             }
-            
+
         }
     } while (opcao != 7);
     printf("\nSaindo...\n");

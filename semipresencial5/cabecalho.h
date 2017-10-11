@@ -44,3 +44,4 @@ FilaV * filavCria();
 void filavInsere(FilaV* f, float v);
 float filavRetira(FilaV * f);
 void filavImprime(FilaV * f);
+void filadImprime(FilaD* f);

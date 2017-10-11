@@ -22,7 +22,7 @@ void filadInsere(FilaD* f, float v) {
     Lista * novo = (Lista *) malloc(sizeof (Lista));
     novo-> info = v;
     novo-> prox = NULL;
-    if (f->fim == NULL && f-> ini) {
+    if (f->fim == NULL && f-> ini == NULL) {
         f->ini = novo;
         f->fim = novo;
     } else {
@@ -43,14 +43,15 @@ float filadRetira(FilaD * f) {
     v = t->info;
     f->ini = t->prox;
     if (f->ini == NULL) {
-        free(t);
+        f->fim = NULL;
     }
+    free(t);
     return v;
 }
 
 void filadLibera(FilaD * f) {
     Lista * q = f-> ini;
-    while (q !=  NULL) {
+    while (q != NULL) {
         Lista * t = q -> prox;
         free(q);
         q = t;
@@ -59,16 +60,18 @@ void filadLibera(FilaD * f) {
     free(f);
 }
 
-void filadImprime(FilaD* f){
-    Lista * q = f;
-    while (f!=NULL)
-    {
-        printf("%.2f",f->ini->info);
-        f=f->ini->prox;
+void filadImprime(FilaD* f) {
+    Lista * q = f->ini;
+    int i;
+   while(q->prox != NULL){
         
-    }
-    
-    
+        printf("\n%.2f",q->info);
+        q++;
+      
+
+    } 
+
+
 }
 
 FilaV * filavCria() {
@@ -105,8 +108,12 @@ float filavRetira(FilaV * f) {
 }
 
 void filavImprime(FilaV * f) {
-    float i;
-    for (i = 0.0; i < f->n; i++) {
-        printf("%f", f->vet[f->ini + i] % 10);
+    int i, cont = 0;
+    for (i = 0; i < f->n; i++) {
+        printf("%f", f->vet[((f->ini + i) % 10)]);
+        cont++;
+    }
+    if (cont != 0) {
+        printf("\n A fila esta vazia!!");
     }
 }

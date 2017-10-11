@@ -24,6 +24,7 @@ int main(int argc, char** argv) {
     FilaD *d;
     FilaV * v;
     float elemento;
+    int elementoi;
     printf("Portinho e MiniMarina Productions EC e nois 2017.\n");
     do {
         printf("\nDigite a opcao desejada de acordo com o menu\n 1-Criar filas\n 2-Inserir elemento nas filas \n 3-Excluir o elemento da fila.\n 4-Inverter a fila.\n 5-Imprimir a fila.\n 6-Demitir a fila.\n 7-Sair\nOpcao:");
@@ -40,15 +41,19 @@ int main(int argc, char** argv) {
             {
                 printf("\nSe escolha qual fila ira receber o seu elemento: \n1-Fila Vector\n2-Fila com lista tipo D\n Opcao(Rei Hey  Apple): ");
                 scanf("%i", &escolhedor);
+                setbuf(stdin,NULL);
                 printf("\nDigite o elemento: ");
                 scanf("%f", &elemento);
+                setbuf(stdin,NULL);
                 if (escolhedor == 1) {
+
                     filavInsere(v, elemento);
-                    printf("\nFoi");
+                    printf("\nSucesso\n");
                 } else
                     if (escolhedor == 2) {
+
                     filadInsere(d, elemento);
-                    printf("\nFoi");
+                    printf("\nSucesso\n");
                 } else {
                     printf("\n Opcao ou elemento errados.");
                 }
@@ -75,7 +80,7 @@ int main(int argc, char** argv) {
             }
             case 4:
             {
-                
+
                 break;
             }
             case 5:
@@ -88,7 +93,7 @@ int main(int argc, char** argv) {
 
                 } else
                     if (escolhedor == 2) {
-                        filadImprime(d);
+                    filadImprime(d);
 
                 } else {
                     printf("\n Opcao errada.");

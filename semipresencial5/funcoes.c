@@ -62,14 +62,10 @@ void filadLibera(FilaD * f) {
 
 void filadImprime(FilaD* f) {
     Lista * q = f->ini;
-    int i;
-   while(q->prox != NULL){
-        
-        printf("\n%.2f",q->info);
-        q++;
-      
-
-    } 
+    Lista  * p;
+    for (p = q; p != NULL; p = p->prox) {
+        printf("\n.2%f", p->info);
+    }
 
 
 }
@@ -110,10 +106,18 @@ float filavRetira(FilaV * f) {
 void filavImprime(FilaV * f) {
     int i, cont = 0;
     for (i = 0; i < f->n; i++) {
-        printf("%f", f->vet[((f->ini + i) % 10)]);
+        printf("\n%.2f", f->vet[((f->ini + i) % 10)]);
         cont++;
     }
-    if (cont != 0) {
+    if (cont == 0) {
         printf("\n A fila esta vazia!!");
     }
+}
+
+void filavLibera(FilaV *f) {
+    int i;
+    for (i = 0; i < f->n; i++) {
+        free(f);
+    }
+    f->n = 0;
 }

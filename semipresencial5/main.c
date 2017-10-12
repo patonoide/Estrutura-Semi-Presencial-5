@@ -107,7 +107,7 @@ int main(int argc, char** argv) {
                 scanf("%i", &escolhedor);
 
                 if (escolhedor == 1) {
-                    elemento = filavRetira(v);
+                    filavLibera(v);
 
                 } else
                     if (escolhedor == 2) {

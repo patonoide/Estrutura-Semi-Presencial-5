@@ -24,6 +24,12 @@ int main(int argc, char** argv) {
     FilaD *d;
     FilaV * v;
     float elemento;
+    int estadov = 0, estadod = 0; 
+/*
+    Estados 0: lista nao foi criada ainda
+            1: ja foi criada mas esta vazia
+            2: ja foi inserido algum elemento nela
+*/
     int elementoi;
     printf("Portinho e MiniMarina Productions EC e nois 2017.\n");
     do {
@@ -35,27 +41,36 @@ int main(int argc, char** argv) {
             {
                 d = filadCria();
                 v = filavCria();
+                estadod = 1;
+                estadov = 1;
                 break;
             }
             case 2:
             {
                 printf("\nSe escolha qual fila ira receber o seu elemento: \n1-Fila Vector\n2-Fila com lista tipo D\n Opcao(Rei Hey  Apple): ");
                 scanf("%i", &escolhedor);
-                setbuf(stdin,NULL);
+                setbuf(stdin, NULL);
                 printf("\nDigite o elemento: ");
                 scanf("%f", &elemento);
-                setbuf(stdin,NULL);
-                if (escolhedor == 1) {
+                setbuf(stdin, NULL);
+
+                if (escolhedor == 1 && estadov != 0) {
 
                     filavInsere(v, elemento);
+                    estadov = 2;
                     printf("\nSucesso\n");
+
                 } else
-                    if (escolhedor == 2) {
+                    if (escolhedor == 2 && estadod != 0) {
 
                     filadInsere(d, elemento);
+                    estadod = 2;
                     printf("\nSucesso\n");
+
                 } else {
-                    printf("\n Opcao ou elemento errados.");
+
+                    printf("\n Algo esta errado.");
+
                 }
 
                 break;
@@ -65,15 +80,16 @@ int main(int argc, char** argv) {
                 printf("\nEscolha de qual fila o elemento sera excluido: \n1-Fila Vector\n2-Fila com lista tipo D\n Opcao(Rei Hey  Apple): ");
                 scanf("%i", &escolhedor);
 
-                if (escolhedor == 1) {
+                if (escolhedor == 1 && estadov == 2) {
                     elemento = filavRetira(v);
+
                     printf("\nO elemento e:%.2f", elemento);
                 } else
-                    if (escolhedor == 2) {
+                    if (escolhedor == 2 && estadod == 2) {
                     elemento = filadRetira(d);
                     printf("\nO elemento e:%.2f", elemento);
                 } else {
-                    printf("\n Opcao ou elemento errados.");
+                    printf("\n Algo esta errado.");
                 }
 
                 break;
@@ -88,11 +104,11 @@ int main(int argc, char** argv) {
                 printf("\nEscolha de qual fila o elemento sera mostrado: \n1-Fila Vector\n2-Fila com lista tipo D\n Opcao(Rei Hey  Apple): ");
                 scanf("%i", &escolhedor);
 
-                if (escolhedor == 1) {
+                if (escolhedor == 1 && estadov == 2) {
                     filavImprime(v);
 
                 } else
-                    if (escolhedor == 2) {
+                    if (escolhedor == 2 && estadod == 2) {
                     filadImprime(d);
 
                 } else {
@@ -108,11 +124,12 @@ int main(int argc, char** argv) {
 
                 if (escolhedor == 1) {
                     filavLibera(v);
+                    estadov = 0;
 
                 } else
                     if (escolhedor == 2) {
                     filadLibera(d);
-
+                    estadod = 0;
                 } else {
                     printf("\n Opcao errada.");
                 }

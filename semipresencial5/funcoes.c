@@ -57,16 +57,18 @@ void filadLibera(FilaD * f) {
         q = t;
 
     }
+    
     free(f);
 }
 
 void filadImprime(FilaD* f) {
     Lista * q = f->ini;
-    Lista  * p;
+    Lista * p;
+    
     for (p = q; p != NULL; p = p->prox) {
-        printf("\n.2%f", p->info);
+        printf("\n%.2f", p->info);
     }
-
+    printf("\n");
 
 }
 

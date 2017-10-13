@@ -1,3 +1,9 @@
+/*
+// Lista 05
+// 13/10/2017
+// Gabriel Porto Oliveira (patonoideoriginal@gmail.com), Marina Silva da Silva (marina_silva98@hotmail.com).
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "cabecalho.h"

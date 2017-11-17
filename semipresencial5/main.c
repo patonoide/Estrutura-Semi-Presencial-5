@@ -1,23 +1,14 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   main.c
- * Author: Asus
- *
- * Created on 6 de Outubro de 2017, 20:22
+// Lista 05
+// 13/10/2017
+// Gabriel Porto Oliveira (patonoideoriginal@gmail.com), Marina Silva da Silva (marina_silva98@hotmail.com).
  */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include "cabecalho.h"
 
-/*
- * 
- */
+
 int main(int argc, char** argv) {
     int opcao = 0;
     int escolhedor = 0;
@@ -33,7 +24,7 @@ int main(int argc, char** argv) {
     int elementoi;
     printf("Portinho e MiniMarina Productions EC e nois 2017.\n");
     do {
-        printf("\nDigite a opcao desejada de acordo com o menu\n 1-Criar filas\n 2-Inserir elemento nas filas \n 3-Excluir o elemento da fila.\n 4-Inverter a fila.\n 5-Imprimir a fila.\n 6-Demitir a fila.\n 7-Sair\nOpcao:");
+        printf("\n\nDigite a opcao desejada de acordo com o menu\n 1-Criar filas\n 2-Inserir elemento nas filas \n 3-Excluir o elemento da fila.\n 4-Inverter a fila (Vetor).\n 5-Imprimir a fila.\n 6-Demitir a fila.\n 7-Sair\nOpcao:");
         scanf("%i", &opcao);
 
         switch (opcao) {
@@ -43,6 +34,7 @@ int main(int argc, char** argv) {
                 v = filavCria();
                 estadod = 1;
                 estadov = 1;
+                printf("\nFila criada com sucesso!!!");
                 break;
             }
             case 2:
@@ -96,7 +88,9 @@ int main(int argc, char** argv) {
             }
             case 4:
             {
-
+                inverter(v);
+                printf("\nFila (Vetor) invertida com sucesso!!!\n");
+                filavImprime(v);
                 break;
             }
             case 5:
@@ -119,7 +113,11 @@ int main(int argc, char** argv) {
             }
             case 6:
             {
+<<<<<<< HEAD
                 printf("\nEscolha qual fila sera libertada: \n1-Fila Vector\n2-Fila com lista tipo D\n Opcao: ");
+=======
+                printf("\nEscolha qual fila sera liberada: \n1-Fila Vector\n2-Fila com lista tipo D\n Opcao(Rei Hey  Apple): ");
+>>>>>>> 36adc8166acf6e6c44b40b31a975dcc3e56a5f28
                 scanf("%i", &escolhedor);
 
                 if (escolhedor == 1) {

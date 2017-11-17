@@ -1,18 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   cabecalho.h
- * Author: Asus
- *
- * Created on 6 de Outubro de 2017, 20:22
- */
-
 #include <stdio.h>
 #include <stdlib.h>
+
+struct pilha {
+    float vet[10];
+    int n;
+}; typedef struct pilha Pilha;
 
 struct lista {
     float info;
@@ -46,3 +38,8 @@ float filavRetira(FilaV * f);
 void filavImprime(FilaV * f);
 void filadImprime(FilaD* f);
 void filavLibera(FilaV *f);
+void inverter(FilaV *f);
+Pilha * criapilha();
+void pilhaPush(Pilha * p, float valor);
+float pilhaPop(Pilha * p);
+void liberapilha(Pilha * p);

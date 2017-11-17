@@ -1,16 +1,14 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+// Lista 05
+// 13/10/2017
+// Gabriel Porto Oliveira (patonoideoriginal@gmail.com), Marina Silva da Silva (marina_silva98@hotmail.com).
  */
-
-
-
-
 
 #include <stdio.h>
 #include <stdlib.h>
 #include "cabecalho.h"
+
+//funcoes fila com lista:
 
 FilaD * filadCria() {
     FilaD * f = (FilaD *) malloc(sizeof (FilaD));
@@ -72,6 +70,42 @@ void filadImprime(FilaD* f) {
 
 }
 
+//funções pilha
+
+Pilha * criaPilha () {
+    Pilha * p = (Pilha *) malloc(sizeof (Pilha));
+    p->n = 0;
+    return p;
+}
+
+void pilhaPush(Pilha * p, float valor) {
+    if (p->n < 10) {
+        p->vet[p->n] = valor;
+        p->n++;
+    } else {
+        printf("A pilha está cheia!!!");
+    }
+}
+
+float pilhaPop(Pilha  *p) {
+    float valorRemovido = 0.0;
+
+    if (p->n > 0) {
+        valorRemovido = p->vet[p->n - 1];
+        p->n--;
+    } else {
+        printf("A pilha está vazia!!!");
+    }
+
+    return valorRemovido;
+}
+
+void liberaPilha (Pilha * p) {
+    free(p);
+}
+
+//funcoes fila com vetores
+
 FilaV * filavCria() {
     FilaV * f = (FilaV*) malloc(sizeof (FilaV));
     f->n = 0;
@@ -123,3 +157,20 @@ void filavLibera(FilaV *f) {
     }
     f->n = 0;
 }
+
+void inverter(FilaV *f){
+    Pilha *p = criaPilha();
+    int x;
+    int n = f->n;   
+    
+    for(x=0;x<n;x++){
+        pilhaPush(p, filavRetira(f));
+    }
+    
+    for(x=0;x<n;x++){
+        filavInsere(f, pilhaPop(p));
+    }
+    
+    liberaPilha(p);   
+}
+

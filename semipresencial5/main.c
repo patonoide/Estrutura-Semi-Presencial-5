@@ -47,7 +47,7 @@ int main(int argc, char** argv) {
             }
             case 2:
             {
-                printf("\nSe escolha qual fila ira receber o seu elemento: \n1-Fila Vector\n2-Fila com lista tipo D\n Opcao(Rei Hey  Apple): ");
+                printf("\nSe escolha qual fila ira receber o seu elemento: \n1-Fila Vector\n2-Fila com lista tipo D\n Opcao: ");
                 scanf("%i", &escolhedor);
                 setbuf(stdin, NULL);
                 printf("\nDigite o elemento: ");
@@ -77,7 +77,7 @@ int main(int argc, char** argv) {
             }
             case 3:
             {
-                printf("\nEscolha de qual fila o elemento sera excluido: \n1-Fila Vector\n2-Fila com lista tipo D\n Opcao(Rei Hey  Apple): ");
+                printf("\nEscolha de qual fila o elemento sera excluido: \n1-Fila Vector\n2-Fila com lista tipo D\n Opcao: ");
                 scanf("%i", &escolhedor);
 
                 if (escolhedor == 1 && estadov == 2) {
@@ -101,7 +101,7 @@ int main(int argc, char** argv) {
             }
             case 5:
             {
-                printf("\nEscolha de qual fila o elemento sera mostrado: \n1-Fila Vector\n2-Fila com lista tipo D\n Opcao(Rei Hey  Apple): ");
+                printf("\nEscolha de qual fila o elemento sera mostrado: \n1-Fila Vector\n2-Fila com lista tipo D\n Opcao: ");
                 scanf("%i", &escolhedor);
 
                 if (escolhedor == 1 && estadov == 2) {
@@ -119,7 +119,7 @@ int main(int argc, char** argv) {
             }
             case 6:
             {
-                printf("\nEscolha qual fila sera libertada: \n1-Fila Vector\n2-Fila com lista tipo D\n Opcao(Rei Hey  Apple): ");
+                printf("\nEscolha qual fila sera libertada: \n1-Fila Vector\n2-Fila com lista tipo D\n Opcao: ");
                 scanf("%i", &escolhedor);
 
                 if (escolhedor == 1) {

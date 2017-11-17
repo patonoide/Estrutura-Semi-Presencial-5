@@ -35,7 +35,7 @@ float filadRetira(FilaD * f) {
     Lista * t;
     float v;
     if (f-> fim == NULL && f-> ini == NULL) {
-        printf(" vazio esta porra");
+        printf(" esta vazio...");
         exit(1);
 
     }
